@@ -8,11 +8,11 @@ class Role:
 
     @property
     def auditions(self):
-        return [ a for a in Audition.all if a._role == self ]
+        return [ a for a in Audition.all if a.role == self ]
     
     @property
     def actors(self):
-        return [a._actor.name for a in self.auditions ]
+        return [a.actor.name for a in self.auditions ]
     
     @property
     def locations(self):
@@ -21,7 +21,7 @@ class Role:
     @classmethod
     @property
     def allActorsName(cls):
-        return [a._role.character_name for a in Audition.all if a.hired == True ]
+        return [a.role.character_name for a in Audition.all if a.hired == True ]
 
     @classmethod
     def silver_screen (cls):

@@ -8,11 +8,11 @@ class Actor:
 
     @property
     def auditions(self):
-        return [ a for a in Audition.all if a._actor == self ]
+        return [ a for a in Audition.all if a.actor == self ]
     
     @property
     def roles(self):
-        return [a._role for a in self.auditions ]
+        return [a.role for a in self.auditions ]
 
     @property
     def characters(self):
@@ -20,4 +20,4 @@ class Actor:
     
     @property
     def paychecks(self):
-        return [a._role.character_name for a in self.auditions if a.hired == True]
+        return [a.role.character_name for a in self.auditions if a.hired == True]
